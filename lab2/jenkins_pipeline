@@ -1,0 +1,31 @@
+#!/usr/bin/env groovy
+
+pipeline {
+    agent any
+    stages {
+        stage('Informing') {
+            steps {
+                echo '--- Environment info ---'
+                sh 'python3 --version'
+                sh 'python3 -m pip --version'
+            }
+        }
+        stage('Getting repositories') {
+            steps {
+                echo 'clone the repositories'
+                sh 'rm -fr mlops-practice'
+                sh 'rm -fr requirements.txt'
+                sh 'git clone https://github.com/NadezhdinM/mlops-practice.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'stage 2 here'
+                sh 'python3 -m pip freeze > ./mlops-practice/requirements.txt'
+                sh 'python3 -m pip install -r ./mlops-practice/requirements.txt'
+                sh 'chmod u+x ./mlops-practice/lab1/job.sh'
+                sh './mlops-practice/lab1/job.sh'
+            }
+        }
+    }
+}

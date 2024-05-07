@@ -16,3 +16,21 @@ To run individual scripts from the initial directory up to step 4:
 2. Run `python3 ./lab1/model_preprocessing.py` to prepare the data for further processing.
 3. Run `python3 ./lab1/model_preparation.py` to create and train a model on the training data, then save it in a separate file.
 4. Run `python3 ./lab1/model_testing.py` to test the model's metrics on the test data.
+
+## Final practice
+<details>
+
+### Цель проекта: разработать конвеер машинного обучения data-продукта (Web или API приложение).
+
+Команда проекта. Проект выполняется в команде из 3-4 человека.
+
+Требования к реализации проекта:
+1. Исходные коды проекта должны находиться в репозитории GitHub.
+2. Проект оркестируется с помощью ci/cd (jenkins или gitlab).
+3. Датасеты версионируются с помощью dvc и синхронизируются с удалённым хранилищем.
+4. Разработка возможностей приложения должна проводиться в отдельных ветках, наборы фичей и версии данных тоже.
+5. В коневеере запускаются не только модульные тесты, но и проверка тестами на качество данных.
+6. Итоговое приложение реализуется в виде образа docker. Сборка образа происходит в конвеере.
+7. В проекте может использоваться предварительно обученная модель. Обучать собственную модель не требуется.
+
+</details>
